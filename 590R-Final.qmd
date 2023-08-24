@@ -1,0 +1,32 @@
+---
+title: "590R Final"
+format: html
+excute:
+  error:true
+  eval:true
+---
+
+install.packages("gtsummary")
+install.packages("tidyverse")
+
+```{r}
+
+library(gtsummary)
+library(tidyverse)
+chocolate <- read_csv(here::here("chocolate data", "chocolate.csv"))
+```
+
+```{r}
+#| label: tbl-one
+#| tbl-cap: "Chocolate Company Information" 
+tbl_summary( 
+  chocolate,
+  by = rating,
+  include = c(country_of_bean_origin),
+  label = list(
+    country_of_bean_origin ~ "Country of Bean Origin"),
+  missing_text = "Missing")
+
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
