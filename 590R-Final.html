@@ -152,33 +152,35 @@ dbl (3): ref, review_date, rating
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>( </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  chocolate,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> rating,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">include =</span> <span class="fu">c</span>(country_of_bean_origin),</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="fu">list</span>(</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    country_of_bean_origin <span class="sc">~</span> <span class="st">"Country of Bean Origin"</span>),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">missing_text =</span> <span class="st">"Missing"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#table</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-one</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Chocolate Company Information" </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>( </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  chocolate,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> rating,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">include =</span> <span class="fu">c</span>(country_of_bean_origin),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="fu">list</span>(</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    country_of_bean_origin <span class="sc">~</span> <span class="st">"Country of Bean Origin"</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">missing_text =</span> <span class="st">"Missing"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="tbl-one" class="anchored">
 
-<div id="zbuhqheyfu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zbuhqheyfu table {
+<div id="iabssxozmm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iabssxozmm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zbuhqheyfu thead, #zbuhqheyfu tbody, #zbuhqheyfu tfoot, #zbuhqheyfu tr, #zbuhqheyfu td, #zbuhqheyfu th {
+#iabssxozmm thead, #iabssxozmm tbody, #iabssxozmm tfoot, #iabssxozmm tr, #iabssxozmm td, #iabssxozmm th {
   border-style: none;
 }
 
-#zbuhqheyfu p {
+#iabssxozmm p {
   margin: 0;
   padding: 0;
 }
 
-#zbuhqheyfu .gt_table {
+#iabssxozmm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -204,12 +206,12 @@ dbl (3): ref, review_date, rating
   border-left-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_caption {
+#iabssxozmm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zbuhqheyfu .gt_title {
+#iabssxozmm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -221,7 +223,7 @@ dbl (3): ref, review_date, rating
   border-bottom-width: 0;
 }
 
-#zbuhqheyfu .gt_subtitle {
+#iabssxozmm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -233,7 +235,7 @@ dbl (3): ref, review_date, rating
   border-top-width: 0;
 }
 
-#zbuhqheyfu .gt_heading {
+#iabssxozmm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -245,13 +247,13 @@ dbl (3): ref, review_date, rating
   border-right-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_bottom_border {
+#iabssxozmm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_col_headings {
+#iabssxozmm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -266,7 +268,7 @@ dbl (3): ref, review_date, rating
   border-right-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_col_heading {
+#iabssxozmm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -286,7 +288,7 @@ dbl (3): ref, review_date, rating
   overflow-x: hidden;
 }
 
-#zbuhqheyfu .gt_column_spanner_outer {
+#iabssxozmm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -298,15 +300,15 @@ dbl (3): ref, review_date, rating
   padding-right: 4px;
 }
 
-#zbuhqheyfu .gt_column_spanner_outer:first-child {
+#iabssxozmm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zbuhqheyfu .gt_column_spanner_outer:last-child {
+#iabssxozmm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zbuhqheyfu .gt_column_spanner {
+#iabssxozmm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -318,11 +320,11 @@ dbl (3): ref, review_date, rating
   width: 100%;
 }
 
-#zbuhqheyfu .gt_spanner_row {
+#iabssxozmm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zbuhqheyfu .gt_group_heading {
+#iabssxozmm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -348,7 +350,7 @@ dbl (3): ref, review_date, rating
   text-align: left;
 }
 
-#zbuhqheyfu .gt_empty_group_heading {
+#iabssxozmm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -363,15 +365,15 @@ dbl (3): ref, review_date, rating
   vertical-align: middle;
 }
 
-#zbuhqheyfu .gt_from_md > :first-child {
+#iabssxozmm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zbuhqheyfu .gt_from_md > :last-child {
+#iabssxozmm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zbuhqheyfu .gt_row {
+#iabssxozmm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -390,7 +392,7 @@ dbl (3): ref, review_date, rating
   overflow-x: hidden;
 }
 
-#zbuhqheyfu .gt_stub {
+#iabssxozmm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -403,7 +405,7 @@ dbl (3): ref, review_date, rating
   padding-right: 5px;
 }
 
-#zbuhqheyfu .gt_stub_row_group {
+#iabssxozmm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -417,15 +419,15 @@ dbl (3): ref, review_date, rating
   vertical-align: top;
 }
 
-#zbuhqheyfu .gt_row_group_first td {
+#iabssxozmm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zbuhqheyfu .gt_row_group_first th {
+#iabssxozmm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zbuhqheyfu .gt_summary_row {
+#iabssxozmm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -435,16 +437,16 @@ dbl (3): ref, review_date, rating
   padding-right: 5px;
 }
 
-#zbuhqheyfu .gt_first_summary_row {
+#iabssxozmm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_first_summary_row.thick {
+#iabssxozmm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zbuhqheyfu .gt_last_summary_row {
+#iabssxozmm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -454,7 +456,7 @@ dbl (3): ref, review_date, rating
   border-bottom-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_grand_summary_row {
+#iabssxozmm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -464,7 +466,7 @@ dbl (3): ref, review_date, rating
   padding-right: 5px;
 }
 
-#zbuhqheyfu .gt_first_grand_summary_row {
+#iabssxozmm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -474,7 +476,7 @@ dbl (3): ref, review_date, rating
   border-top-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_last_grand_summary_row_top {
+#iabssxozmm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -484,11 +486,11 @@ dbl (3): ref, review_date, rating
   border-bottom-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_striped {
+#iabssxozmm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zbuhqheyfu .gt_table_body {
+#iabssxozmm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -497,7 +499,7 @@ dbl (3): ref, review_date, rating
   border-bottom-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_footnotes {
+#iabssxozmm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -511,7 +513,7 @@ dbl (3): ref, review_date, rating
   border-right-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_footnote {
+#iabssxozmm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -520,7 +522,7 @@ dbl (3): ref, review_date, rating
   padding-right: 5px;
 }
 
-#zbuhqheyfu .gt_sourcenotes {
+#iabssxozmm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -534,7 +536,7 @@ dbl (3): ref, review_date, rating
   border-right-color: #D3D3D3;
 }
 
-#zbuhqheyfu .gt_sourcenote {
+#iabssxozmm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -542,67 +544,67 @@ dbl (3): ref, review_date, rating
   padding-right: 5px;
 }
 
-#zbuhqheyfu .gt_left {
+#iabssxozmm .gt_left {
   text-align: left;
 }
 
-#zbuhqheyfu .gt_center {
+#iabssxozmm .gt_center {
   text-align: center;
 }
 
-#zbuhqheyfu .gt_right {
+#iabssxozmm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zbuhqheyfu .gt_font_normal {
+#iabssxozmm .gt_font_normal {
   font-weight: normal;
 }
 
-#zbuhqheyfu .gt_font_bold {
+#iabssxozmm .gt_font_bold {
   font-weight: bold;
 }
 
-#zbuhqheyfu .gt_font_italic {
+#iabssxozmm .gt_font_italic {
   font-style: italic;
 }
 
-#zbuhqheyfu .gt_super {
+#iabssxozmm .gt_super {
   font-size: 65%;
 }
 
-#zbuhqheyfu .gt_footnote_marks {
+#iabssxozmm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zbuhqheyfu .gt_asterisk {
+#iabssxozmm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zbuhqheyfu .gt_indent_1 {
+#iabssxozmm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zbuhqheyfu .gt_indent_2 {
+#iabssxozmm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zbuhqheyfu .gt_indent_3 {
+#iabssxozmm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zbuhqheyfu .gt_indent_4 {
+#iabssxozmm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zbuhqheyfu .gt_indent_5 {
+#iabssxozmm .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;1:  Chocolate Company Information </caption>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
   <thead>
     
     <tr class="gt_col_headings">
@@ -1452,6 +1454,31 @@ dbl (3): ref, review_date, rating
 </div>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#regression </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>logistic_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="fu">as.factor</span>(chocolate<span class="sc">$</span>rating)<span class="sc">~</span> cocoa_percent <span class="sc">+</span> review_date,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">data =</span> chocolate, <span class="at">family =</span> <span class="fu">binomial</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#figure</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-hist</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Chocolate Rating"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(chocolate<span class="sc">$</span>rating)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="590R-Final_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><strong>?@fig-hist</strong> contains a histogram and <strong>?@tbl-one</strong> a table.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#function</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(chocolate<span class="sc">$</span>rating)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>rating_mean<span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  mean_val <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> n</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(mean_val)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
 

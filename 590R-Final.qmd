@@ -17,6 +17,7 @@ chocolate <- read_csv(here::here("chocolate data", "chocolate.csv"))
 ```
 
 ```{r}
+#table
 #| label: tbl-one
 #| tbl-cap: "Chocolate Company Information" 
 tbl_summary( 
@@ -29,4 +30,26 @@ tbl_summary(
 
 ```
 
+```{r}
+#regression 
+logistic_model <- glm(as.factor(chocolate$rating)~ cocoa_percent + review_date,
+									 data = chocolate, family = binomial())
+```
+
+```{r}
+#figure
+#| label: fig-hist
+#| fig-cap: "Chocolate Rating"
+hist(chocolate$rating)
+```
+@fig-hist contains a histogram and @tbl-one a table.
+
+```{r}
+#function
+x <- c(chocolate$rating)
+rating_mean<- function(x) {
+  n <- length(x)
+  mean_val <- sum(x) / n
+  return(mean_val)}
+```
 The `echo: false` option disables the printing of code (only output is displayed).
