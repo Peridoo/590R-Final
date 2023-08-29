@@ -6,20 +6,19 @@ excute:
   eval:true
 ---
 
-install.packages("gtsummary")
+install.packages("gtsummary") 
 install.packages("tidyverse")
 
 ```{r}
-
 library(gtsummary)
 library(tidyverse)
 chocolate <- read_csv(here::here("chocolate data", "chocolate.csv"))
 ```
 
+
 ```{r}
-#table
 #| label: tbl-one
-#| tbl-cap: "Chocolate Company Information" 
+#| tbl-cap: "Chocolate Ratings Base on Bean's Country Origin"
 tbl_summary( 
   chocolate,
   by = rating,
@@ -29,20 +28,27 @@ tbl_summary(
   missing_text = "Missing")
 
 ```
-
+Beans from Venezuela had the (`rinline_text(table1, variable = "country_of_bean_origin", level = "Venezuela", column = "stat_12")`) ratings of five, the most out of all countries. 
 ```{r}
 #regression 
-logistic_model <- glm(as.factor(chocolate$rating)~ cocoa_percent + review_date,
+logistic_model <- glm(as.factor(chocolate$cocoa_percent) ~ rating + review_date,
 									 data = chocolate, family = binomial())
+tbl_regression(
+	logistic_model,
+	exponentiate = TRUE)
+
 ```
 
 ```{r}
-#figure
 #| label: fig-hist
-#| fig-cap: "Chocolate Rating"
-hist(chocolate$rating)
+#| fig-cap: "Chocolate Review Date"
+hist(chocolate$review_date)
 ```
-@fig-hist contains a histogram and @tbl-one a table.
+@fig-hist
+```{r}
+
+```
+
 
 ```{r}
 #function
@@ -51,5 +57,16 @@ rating_mean<- function(x) {
   n <- length(x)
   mean_val <- sum(x) / n
   return(mean_val)}
+rating_mean(x=x)
+
 ```
+
+```{r}
+#inline text 1
+stats <- list(n = nrow(chocolate),
+              mean_rating = mean(chocolate$rating))
+```
+
+The average ratings from all of the `r stats$n` chocolates are `r stats$mean_rating`
+
 The `echo: false` option disables the printing of code (only output is displayed).
