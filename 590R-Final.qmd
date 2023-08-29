@@ -5,9 +5,11 @@ excute:
   error:true
   eval:true
 ---
-
+install.packages("renv")
+renv::init()
 install.packages("gtsummary") 
 install.packages("tidyverse")
+renv::snapshot()
 
 ```{r}
 library(gtsummary)
@@ -19,37 +21,34 @@ chocolate <- read_csv(here::here("chocolate data", "chocolate.csv"))
 ```{r}
 #| label: tbl-one
 #| tbl-cap: "Chocolate Ratings Base on Bean's Country Origin"
-tbl_summary( 
+table1 <- tbl_summary( 
   chocolate,
   by = rating,
   include = c(country_of_bean_origin),
   label = list(
     country_of_bean_origin ~ "Country of Bean Origin"),
   missing_text = "Missing")
-
+table1
 ```
-Beans from Venezuela had the (`rinline_text(table1, variable = "country_of_bean_origin", level = "Venezuela", column = "stat_12")`) ratings of five, the most out of all countries. 
+Venezuela's bean received the most number of level 4 ratings out of all countries, about (`r inline_text(table1, variable = "country_of_bean_origin", level = "Venezuela", column = "stat_12")`) times
+
+@tbl-one is a table extracted from from Github's tidytuesday database 
 ```{r}
-#regression 
+#| label: tbl-two
+#| tbl-cap: "Regression on Cocoa Percent from Ratings and review date"
 logistic_model <- glm(as.factor(chocolate$cocoa_percent) ~ rating + review_date,
 									 data = chocolate, family = binomial())
 tbl_regression(
 	logistic_model,
 	exponentiate = TRUE)
-
 ```
 
 ```{r}
 #| label: fig-hist
-#| fig-cap: "Chocolate Review Date"
+#| fig-cap: "Total Chocolate Review Date"
 hist(chocolate$review_date)
 ```
-@fig-hist
-```{r}
-
-```
-
-
+@fig-hist shows distribution of the review dates 
 ```{r}
 #function
 x <- c(chocolate$rating)
@@ -62,11 +61,8 @@ rating_mean(x=x)
 ```
 
 ```{r}
-#inline text 1
 stats <- list(n = nrow(chocolate),
               mean_rating = mean(chocolate$rating))
 ```
 
 The average ratings from all of the `r stats$n` chocolates are `r stats$mean_rating`
-
-The `echo: false` option disables the printing of code (only output is displayed).
