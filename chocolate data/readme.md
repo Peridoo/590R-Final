@@ -1,4 +1,5 @@
 ### Please add alt text to your posts
+run r scripts, you can make changes on the "stats" for mean, render the quarto doc. 
 
 Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
 
